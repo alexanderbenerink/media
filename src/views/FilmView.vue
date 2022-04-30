@@ -1,5 +1,5 @@
 <template>
-  <section class="hero has-background-light is-small">
+  <section class="hero is-small">
     <div class="hero-head">
       <nav class="navbar">
         <div class="container">
@@ -36,6 +36,16 @@
                 </router-link>
               </span>
               <span class="navbar-item">
+                <router-link to="/wheel">
+                  <a class="button is-info">
+                    <span class="icon">
+                      <i class="fa-solid fa-dharmachakra"></i>
+                    </span>
+                    <span>Wheel</span>
+                  </a>
+                </router-link>
+              </span>
+              <span class="navbar-item">
                 <a class="button is-info" href="https://github.com/alexanderbenerink/media" target="_blank">
                   <span class="icon">
                     <i class="fa-brands fa-github"></i>
@@ -51,10 +61,6 @@
 
     <div class="hero-body">
       <div class="container has-text-centered">
-        <p class="title">
-          Films
-        </p>
-        <br>
 <!--        <p class="subtitle">-->
 <!--          Subtitle-->
 <!--        </p>-->
@@ -63,6 +69,10 @@
         <div class="column is-5">
           <div class="card">
             <div class="card-content">
+              <p class="title has-text-centered">
+                Films
+              </p>
+              <br>
               <div class="content">
                 <film-component></film-component>
               </div>
@@ -77,7 +87,7 @@
         <div class="container">
           <ul>
             <li>
-              <a>{{ new Date().getFullYear() }} © Alexander Benerink</a>
+              <a style="color: white">{{ new Date().getFullYear() }} © Alexander Benerink</a>
             </li>
           </ul>
         </div>
@@ -93,7 +103,5 @@ export default {
   components: {FilmComponent}
 }
 </script>
-
 <style scoped>
-
 </style>

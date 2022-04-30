@@ -1,5 +1,5 @@
 <template>
-  <section class="hero has-background-light is-large">
+  <section class="hero is-small">
     <div class="hero-head">
       <nav class="navbar">
         <div class="container">
@@ -36,6 +36,16 @@
                 </router-link>
               </span>
               <span class="navbar-item">
+                <router-link to="/wheel">
+                  <a class="button is-info">
+                    <span class="icon">
+                      <i class="fa-solid fa-dharmachakra"></i>
+                    </span>
+                    <span>Wheel</span>
+                  </a>
+                </router-link>
+              </span>
+              <span class="navbar-item">
                 <a class="button is-info" href="https://github.com/alexanderbenerink/media" target="_blank">
                   <span class="icon">
                     <i class="fa-brands fa-github"></i>
@@ -51,21 +61,32 @@
 
     <div class="hero-body">
       <div class="container has-text-centered">
-        <p class="title">
-          Games
-        </p>
-        <p class="subtitle">
-          Subtitle
-        </p>
+<!--        <p class="subtitle">-->
+<!--          Subtitle-->
+<!--        </p>-->
+      </div>
+      <div class="columns is-justify-content-center">
+        <div class="column is-5">
+          <div class="card">
+            <div class="card-content">
+              <p class="title has-text-centered">
+                Games
+              </p>
+              <br>
+              <div class="content">
+                <game-component></game-component>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
     <div class="hero-foot">
       <nav class="tabs is-boxed is-fullwidth">
         <div class="container">
           <ul>
             <li>
-              <a>{{ new Date().getFullYear() }} © Alexander Benerink</a>
+              <a style="color: white">{{ new Date().getFullYear() }} © Alexander Benerink</a>
             </li>
           </ul>
         </div>
@@ -75,8 +96,10 @@
 </template>
 
 <script>
+import GameComponent from "@/components/GameComponent";
 export default {
-  name: "GameView"
+  name: "GameView",
+  components: {GameComponent}
 }
 </script>
 

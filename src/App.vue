@@ -27,6 +27,10 @@
 /*nav a.router-link-exact-active {*/
 /*  color: #42b983;*/
 /*}*/
+body {
+  background-image: url("../public/img/persian.jpg");
+  background-size: 1309px 750px;
+}
 </style>
 
 <style lang="sass">
