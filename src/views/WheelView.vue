@@ -72,6 +72,7 @@
               </div>
         </div>
       </div>
+      <br>
     </div>
     <div class="hero-foot">
       <nav class="tabs is-boxed is-fullwidth">
