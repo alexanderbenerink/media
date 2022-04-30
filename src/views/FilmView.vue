@@ -76,9 +76,11 @@
               <div class="content">
                 <div class="columns">
                   <div class="column is-9">
-                    <ul id="movies" v-for="film in films" v-bind:key="film.id">
-                      <film-component v-bind="film"></film-component>
-                    </ul>
+                    <div id="movies">
+                      <ul v-for="film in films" v-bind:key="film.id">
+                        <film-component v-bind="film"></film-component>
+                      </ul>
+                    </div>
                   </div>
                   <div class="column is-1">
                     <button class="button is-warning" @click.prevent="copyMovies('movies')">Copy</button>
