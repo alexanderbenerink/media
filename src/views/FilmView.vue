@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-info is-medium">
+  <section class="hero is-info is-small">
     <div class="hero-head">
       <nav class="navbar">
         <div class="container">
@@ -54,15 +54,18 @@
         <p class="title">
           Films
         </p>
+        <br>
 <!--        <p class="subtitle">-->
 <!--          Subtitle-->
 <!--        </p>-->
       </div>
-      <div class="column">
-        <div class="card">
-          <div class="card-content">
-            <div class="content">
-              <film-component></film-component>
+      <div class="columns is-justify-content-center">
+        <div class="column is-5">
+          <div class="card">
+            <div class="card-content">
+              <div class="content">
+                <film-component></film-component>
+              </div>
             </div>
           </div>
         </div>

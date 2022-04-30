@@ -1,6 +1,6 @@
 <template>
   <div class="columns">
-    <div class="column">
+    <div class="column is-9">
       <ul id="movies">
         <li>12 Monkeys</li>
         <li>3:10 to Yuma</li>
@@ -285,7 +285,7 @@
         <li>Zorro</li>
       </ul>
     </div>
-    <div class="column">
+    <div class="column is-1">
       <button class="button is-warning" @click.prevent="copyMovies('movies')">Copy</button>
     </div>
   </div>
@@ -295,22 +295,20 @@
 <script>
 export default {
   name: "FilmComponent",
-  data() {
-    return {
-      text: 'Copied movies to clipboard'
-    };
-  },
   methods: {
     copyMovies(id) {
       let copyText = document.getElementById(id).innerText;
       let movieArray = [copyText];
       let movieArrayToString = movieArray.join('\n');
       navigator.clipboard.writeText(movieArrayToString);
+      alert("\nMovies are copied to clipboard!");
     }
   }
 };
 </script>
 
 <style scoped>
-
+  ul {
+    list-style-type: none;
+  }
 </style>
