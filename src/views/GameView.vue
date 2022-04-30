@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-info is-large">
+  <section class="hero has-background-light is-large">
     <div class="hero-head">
       <nav class="navbar">
         <div class="container">
@@ -27,7 +27,7 @@
               </span>
               <span class="navbar-item">
                 <router-link to="/games">
-                  <a class="button is-info is-active">
+                  <a class="button is-info is-inverted">
                     <span class="icon">
                       <i class="fa-solid fa-gamepad"></i>
                     </span>
@@ -36,7 +36,7 @@
                 </router-link>
               </span>
               <span class="navbar-item">
-                <a class="button is-info is-inverted" href="https://github.com/alexanderbenerink/media" target="_blank">
+                <a class="button is-info" href="https://github.com/alexanderbenerink/media" target="_blank">
                   <span class="icon">
                     <i class="fa-brands fa-github"></i>
                   </span>
