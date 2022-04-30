@@ -5,6 +5,13 @@
 npm install
 ```
 
+### Troubleshooting
+```
+npm install -g @vue/cli
+
+npm install -g @vue/cli-service
+```
+
 ### Compiles and hot-reloads for development
 ```
 npm run serve
