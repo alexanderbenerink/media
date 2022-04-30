@@ -9,6 +9,7 @@
     "deploy": "node scripts/gh-pages-deploy.js"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "bulma": "^0.9.3",
     "core-js": "^3.8.3",
     "vue": "^3.2.13",

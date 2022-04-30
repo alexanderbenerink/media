@@ -74,7 +74,16 @@
               </p>
               <br>
               <div class="content">
-                <film-component></film-component>
+                <div class="columns">
+                  <div class="column is-9">
+                    <ul id="movies" v-for="film in films" v-bind:key="film.id">
+                      <film-component v-bind="film"></film-component>
+                    </ul>
+                  </div>
+                  <div class="column is-1">
+                    <button class="button is-warning" @click.prevent="copyMovies('movies')">Copy</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -98,9 +107,53 @@
 
 <script>
 import FilmComponent from "@/components/FilmComponent";
+import FilmService from "@/services/FilmService";
+
 export default {
   name: "FilmView",
-  components: {FilmComponent}
+  components: {FilmComponent},
+  data () {
+    return {
+      airtableResponse: []
+    }
+  },
+  mounted: function () {
+    let self = this
+    async function getFilms () {
+      try {
+        const response = await FilmService.getFilms()
+        console.log(response)
+        self.airtableResponse = response.data.records
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    getFilms()
+  },
+  computed: {
+    films () {
+      const self = this
+      const filmList = []
+      for (var i = 0; i < self.airtableResponse.length; i++) {
+        if (self.airtableResponse[i].fields.Published) {
+          const film = {
+            title: self.airtableResponse[i].fields.Title
+          }
+          filmList.push(film)
+        }
+      }
+      return filmList
+    }
+  },
+  methods: {
+    copyMovies(id) {
+      let copyText = document.getElementById(id).innerText;
+      let movieArray = [copyText];
+      let movieArrayToString = movieArray.join('\n');
+      navigator.clipboard.writeText(movieArrayToString);
+      alert("\nMovies are copied to clipboard!");
+    }
+  }
 }
 </script>
 <style scoped>
