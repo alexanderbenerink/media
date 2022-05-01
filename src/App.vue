@@ -27,9 +27,6 @@
 /*nav a.router-link-exact-active {*/
 /*  color: #42b983;*/
 /*}*/
-body {
-  background-image: url("../public/img/prism.png");
-}
 </style>
 
 <style lang="sass">

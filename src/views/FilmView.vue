@@ -98,7 +98,7 @@
         <div class="container">
           <ul>
             <li>
-              <a style="color: white">{{ new Date().getFullYear() }} © Alexander Benerink</a>
+              <a style="color: white; pointer-events: none">{{ new Date().getFullYear() }} © Alexander Benerink</a>
             </li>
           </ul>
         </div>
@@ -124,8 +124,8 @@ export default {
     async function getFilms () {
       try {
         const response = await FilmService.getFilms()
-        console.log(response)
         self.airtableResponse = response.data.records
+        console.log(self.airtableResponse)
       } catch (err) {
         console.log(err)
       }
@@ -159,4 +159,7 @@ export default {
 }
 </script>
 <style scoped>
+ul {
+  list-style-type: none;
+}
 </style>

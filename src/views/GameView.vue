@@ -86,7 +86,7 @@
         <div class="container">
           <ul>
             <li>
-              <a style="color: white">{{ new Date().getFullYear() }} © Alexander Benerink</a>
+              <a style="color: white; pointer-events: none">{{ new Date().getFullYear() }} © Alexander Benerink</a>
             </li>
           </ul>
         </div>

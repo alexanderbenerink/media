@@ -1,6 +1,6 @@
 <template>
         <iframe
-            src="https://wheelofnames.com/s8y-jgk"
+            src="https://wheelofnames.com/k3k-6t7"
             width="100%" height="800" scrolling="no">
       </iframe>
 </template>
