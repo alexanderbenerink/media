@@ -10,8 +10,9 @@ const airtableAPIKey = process.env.VUE_APP_AIRTABLE_KEY
 
 
 //hieronder is van Tim (werkt misschien / misschien niet)
-var Airtable = require('airtable');
-var base = new Airtable({apiKey: airtableAPIKey}).base('appArhUR8kx4G5q88');
+const Airtable = require('airtable');
+const base = new Airtable({apiKey: airtableAPIKey}).base('appArhUR8kx4G5q88');
+const movies = [];
 
 export default {
     getFilms () {
@@ -21,13 +22,15 @@ export default {
         }).eachPage(function page(records, fetchNextPage) {
             records.forEach(function(record) {
                 //Alle films die in airtable staan
-                console.log(record.get('Title'));
-                return record.get('Title');
+                // console.log(record.get('Title'));
+                // return record.get('Title');
+                movies.push(record.get('Title'));
             });
             fetchNextPage();
-        
+
         }, function done(err) {
-            if (err) { console.error(err); return; }
+            // console.log(movies);
+            if (err) { console.error(err); }
         });
 
         // try {
@@ -46,5 +49,9 @@ export default {
         //   }
         // return Axios.get('?maxRecords=4&view=Grid%20view')
         
+    },
+    getMovies () {
+        this.getFilms();
+        return movies;
     }
 }

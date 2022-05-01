@@ -116,15 +116,22 @@ export default {
   components: {FilmComponent},
   data () {
     return {
-      airtableResponse: []
+      airtableResponse: [],
     }
   },
   mounted: function () {
     let self = this
-    async function getFilms () {
+      async function getFilms () {
       try {
-        const response = await FilmService.getFilms()
-        self.airtableResponse = response.data.records
+        // const response = await FilmService.getFilms()
+        const response = FilmService.getMovies();
+        // console.log(document.getElementById('movies').innerHTML = response);
+
+        // document.getElementById('movies').innerHTML = '<li>' + response + '</li>';
+
+
+        // self.airtableResponse = response.data.records
+        self.airtableResponse = response
         console.log(self.airtableResponse)
       } catch (err) {
         console.log(err)
@@ -136,10 +143,10 @@ export default {
     films () {
       const self = this
       const filmList = []
-      for (var i = 0; i < self.airtableResponse.length; i++) {
-        if (self.airtableResponse[i].fields.Published) {
+      for (let i = 0; i < self.airtableResponse.length; i++) {
+        if (filmList.indexOf(self.airtableResponse[i]) === -1) {
           const film = {
-            title: self.airtableResponse[i].fields.Title
+            title: self.airtableResponse[i]
           }
           filmList.push(film)
         }

@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background-image: url("/img/prism.png") !important; 
-    height: 100vh;
-    width: 100vw;
+    background-image: url("../img/persian.jpg") !important;
+    height: 100%;
+    width: 100%;
   }
