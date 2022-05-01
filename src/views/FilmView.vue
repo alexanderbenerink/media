@@ -124,12 +124,7 @@ export default {
     async function getFilms () {
       try {
         const response = await FilmService.getFilms()
-        // const response = FilmService.getMovies();
-        // console.log(document.getElementById('movies').innerHTML = response);
 
-        // document.getElementById('movies').innerHTML = '<li>' + response + '</li>';
-
-        // self.airtableResponse = response.data.records
         self.airtableResponse = response
         console.log(self.airtableResponse)
       } catch (err) {
