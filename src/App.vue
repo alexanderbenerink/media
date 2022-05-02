@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-small">
+  <section id="app" class="hero has-background-light is-small" :class="{ 'has-background-dark': darkMode }">
     <!-- Header -->
     <div class="hero-head">
       <nav class="navbar">
@@ -18,7 +18,7 @@
             <div class="navbar-end">
               <span class="navbar-item">
                 <router-link to="/">
-                  <a class="button is-info">
+                  <a class="button is-info" :class="{ 'is-inverted': !darkMode }">
                     <span class="icon">
                       <i class="fa-solid fa-film"></i>
                     </span>
@@ -28,7 +28,7 @@
               </span>
               <span class="navbar-item">
                 <router-link to="/games">
-                  <a class="button is-info">
+                  <a class="button is-info" :class="{ 'is-inverted': !darkMode }">
                     <span class="icon">
                       <i class="fa-solid fa-gamepad"></i>
                     </span>
@@ -38,7 +38,7 @@
               </span>
               <span class="navbar-item">
                 <router-link to="/wheel">
-                  <a class="button is-info">
+                  <a class="button is-info" :class="{ 'is-inverted': !darkMode }">
                     <span class="icon">
                       <i class="fa-solid fa-dharmachakra"></i>
                     </span>
@@ -47,12 +47,19 @@
                 </router-link>
               </span>
               <span class="navbar-item">
-                <a class="button is-info is-inverted" href="https://github.com/alexanderbenerink/media" target="_blank">
+                <a class="button is-info" href="https://github.com/alexanderbenerink/media" target="_blank" :class="{ 'is-inverted': !darkMode }">
                   <span class="icon">
                     <i class="fa-brands fa-github"></i>
                   </span>
                   <span>See on Github</span>
                 </a>
+              </span>
+              <span class="navbar-item">
+                <label class="button is-info is-rounded" for="checkbox" :class="{ 'is-inverted': darkMode }" @click="darkMode = !darkMode">
+                    <span class="icon">
+                      <i class="fas fa-moon" :class="{ 'fas fa-sun': darkMode }"></i>
+                    </span>
+                  </label>
               </span>
             </div>
           </div>
@@ -89,6 +96,7 @@ export default {
   name: 'app',
   data () {
     return {
+      darkMode: false,
       prevHeight: 0
     }
   },

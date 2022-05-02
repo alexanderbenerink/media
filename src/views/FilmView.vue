@@ -7,22 +7,22 @@
       </div>
       <div class="columns is-justify-content-center">
         <div class="column is-5">
-          <div class="card">
+          <div class="card" :class="{ 'has-background-grey-dark': this.$root.darkMode }">
             <div class="card-content">
-              <p class="title has-text-centered">
+              <p class="title has-text-centered" :class="{ 'has-text-light': this.$root.darkMode }">
                 Films
               </p>
               <br>
               <div class="content">
-                <div class="columns has-background-light">
-                  <div class="column is-10">
+                <div class="columns has-background-light" :class="{ 'has-background-grey-darker': this.$root.darkMode }">
+                  <div class="column is-9">
                     <div id="movies">
                       <ul v-for="film in films" v-bind:key="film.id">
-                        <film-component v-bind="film"></film-component>
+                        <film-component v-bind="film" :class="{ 'has-text-light': this.$root.darkMode }"></film-component>
                       </ul>
                     </div>
                   </div>
-                  <div class="column is-1">
+                  <div class="column is-3 has-text-centered">
                     <button class="button is-warning" @click.prevent="copyMovies('movies')">Copy</button>
                   </div>
                 </div>
