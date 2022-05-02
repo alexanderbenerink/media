@@ -100,6 +100,11 @@ export default {
       prevHeight: 0
     }
   },
+  mounted() {
+    if (localStorage.getItem('darkMode')) {
+      this.darkMode = JSON.parse(localStorage.getItem('darkMode'));
+    }
+  },
   methods: {
     // beforeLeave (element) {
     //   this.prevHeight = getComputedStyle(element).height
@@ -120,6 +125,9 @@ export default {
   watch: {
     '$route' (to) {
       document.title = to.meta.title || 'Consoomers'
+    },
+    darkMode(newDarkMode) {
+      localStorage.setItem('darkMode', newDarkMode);
     }
   }
 }
